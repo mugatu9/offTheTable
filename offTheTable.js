@@ -19,36 +19,22 @@ function Person(name, allergies, aversions) {
   this.aversions = aversions;
 }
 
-PeopleGroup.prototype.addPerson = function(){
-  this.persons.push(new Person(name, allergies, aversions));
-}
-
-
-// var nathan = new Person(["nuts", "dairy", "celery"], ["shrimp", "mushrooms"]);
-// var matthew = new Person(["gluten", "celery"], ["mayo", "shrimp", "sour cream"]);
-
-
-groupPeeps.addPerson("Nathan", ["nuts", "dairy", "celery"], ["shrimp", "mushrooms"]);
-groupPeeps.addPerson("Matthew", ["gluten", "celery"], ["mayo", "shrimp", "sour cream"]);
-
-
-
-Person.aversions = function() {
-
-}
-
 function PeopleGroup() {
   this.persons = [];
 }
 
+PeopleGroup.prototype.addPerson = function(){
+  this.persons.push(new Person(name, allergies, aversions));
+}
 
 var groupPeeps = new PeopleGroup();
 
+groupPeeps.addPerson("Nathan", ["nuts", "dairy", "celery"], ["shrimp", "mushrooms"]);
+groupPeeps.addPerson("Matthew", ["gluten", "celery"], ["mayo", "shrimp", "sour cream"]);
 
+var masterAllergiesList = [groupPeeps[0][2], groupPeeps[1][2]],
+    masterAversionsList = [groupPeeps[0][3], groupPeeps[1][3]];
 
-
-
-
-
-
+console.log("The group's allergies are " + masterAllergiesList);
+console.log("The group's aversions are " + masterAversionsList);
 </script>
