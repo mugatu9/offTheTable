@@ -13,6 +13,9 @@ foodCategories.push(fruit, veggies, dairy, grains, nuts, legumes);
 
 */
 
+var masterAllergiesList = [],
+    masterAversionsList = [];
+
 function Person(name, allergies, aversions) {
   this.name = name;
   this.allergies = allergies;
@@ -27,14 +30,17 @@ PeopleGroup.prototype.addPerson = function(){
   this.persons.push(new Person(name, allergies, aversions));
 }
 
-var groupPeeps = new PeopleGroup();
+var peopleGroup = new PeopleGroup();
 
-groupPeeps.addPerson("Nathan", ["nuts", "dairy", "celery"], ["shrimp", "mushrooms"]);
-groupPeeps.addPerson("Matthew", ["gluten", "celery"], ["mayo", "shrimp", "sour cream"]);
+peopleGroup.addPerson("Nathan", ["nuts", "dairy", "celery"], ["shrimp", "mushrooms"]);
+peopleGroup.addPerson("Matthew", ["gluten", "celery"], ["mayo", "shrimp", "sour cream"]);
 
-var masterAllergiesList = [groupPeeps[0][2], groupPeeps[1][2]],
-    masterAversionsList = [groupPeeps[0][3], groupPeeps[1][3]];
+for(i=0; i<peopleGroup.persons.length; i++){
+  masterAllergiesList.push(peopleGroup.persons[i].allergies);
+  masterAversionsList.push(peopleGroup.persons[i].aversions);
+}
 
 console.log("The group's allergies are " + masterAllergiesList);
 console.log("The group's aversions are " + masterAversionsList);
+
 </script>

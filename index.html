@@ -13,6 +13,9 @@ foodCategories.push(fruit, veggies, dairy, grains, nuts, legumes);
 
 */
 
+var masterAllergiesList = [],
+    masterAversionsList = [];
+
 function Person(name, allergies, aversions) {
   this.name = name;
   this.allergies = allergies;
@@ -21,27 +24,23 @@ function Person(name, allergies, aversions) {
 
 function PeopleGroup() {
   this.persons = [];
-  this.getAllergies = function(){
-
-  };
-  this.getAversions = function() {
-
-  };
 }
 
 PeopleGroup.prototype.addPerson = function(name, allergies, aversions){
   this.persons.push(new Person(name, allergies, aversions));
 }
 
-var groupPeeps = new PeopleGroup();
+var peopleGroup = new PeopleGroup();
 
-groupPeeps.addPerson("Nathan", ["nuts", "dairy", "celery"], ["shrimp", "mushrooms"]);
-groupPeeps.addPerson("Matthew", ["gluten", "celery"], ["mayo", "shrimp", "sour cream"]);
+peopleGroup.addPerson("Nathan", ["nuts", "dairy", "celery"], ["shrimp", "mushrooms"]);
+peopleGroup.addPerson("Matthew", ["gluten", "celery"], ["mayo", "shrimp", "sour cream"]);
+peopleGroup.addPerson("Clint", ["fish", "peanut butter"], ["yams", "cauliflower"]);
+for(i=0; i<peopleGroup.persons.length; i++){
+  masterAllergiesList.push(peopleGroup.persons[i].allergies);
+  masterAversionsList.push(peopleGroup.persons[i].aversions);
+}
 
-var masterAllergiesList = [],
-    masterAversionsList = [];
+console.log("The group's allergies are " + masterAllergiesList);
+console.log("The group's aversions are " + masterAversionsList);
 
-//console.log("The group's allergies are " + masterAllergiesList);
-//console.log("The group's aversions are " + masterAversionsList);
-console.log(groupPeeps.persons);
 </script>
