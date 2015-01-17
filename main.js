@@ -1,5 +1,5 @@
 <script>
-var addPerson = getElementsByClassName("addPerson")[0];
+var addPerson = document.getElementsByClassName("addPerson")[0];
 addPerson.addEventListenter('click',peopleGroup.addPerson, false);
 
 var masterAllergiesList = [],
@@ -22,6 +22,9 @@ PeopleGroup.prototype.addPerson = function(name, allergies, aversions){
   var name      = getInputs[0],
       allergies = getInputs[1].split(seperator),
       aversions = getInputs[2].split(seperator);
+
+  generateDisplay(name, allergies, aversions);
+
   this.persons.push(new Person(name, allergies, aversions));
 
   counter++;
@@ -38,7 +41,29 @@ for(i=0; i<peopleGroup.persons.length; i++){
 }
 
 
-function generateOutput () {}
+function generateDisplay (name, allergies, aversions) {
+  if(!document.getElementsByClassName("table")) {
+    var output = document.getElementsByClassName("form-box")[0],
+        tbl = document.createElement("table"),
+        tblBody = document.createElement("tbody");
+    tblBody.setAttribute("class", "table");
+    table.appendChild(tblBody);
+    output.appendChild(tbl);
+  }
+
+  var tblBody = document.getElementsByClassName("table"),
+      row = document.createElement("tr"),
+      tdName = document.createElement("td"),
+      tdAllergies = document.createElement("td"),
+      tdAversions = document.createElement("td");
+  tdName.appendChild(document.createTextNode(name));
+  tdAllergies.appendChild(document.createTextNode(allergies));
+  tdAversions.appendChild(document.createTextNode(aversions));
+  row.appendChild(tdName);
+  row.appendChild(tdAllergies);
+  row.appendChild(tdAversions);
+  tblBody.appendChild(row);
+}
 console.log("The group's allergies are " + masterAllergiesList);
 console.log("The group's aversions are " + masterAversionsList);
 
