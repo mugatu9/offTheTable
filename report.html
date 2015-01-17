@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Off the Table</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'>
+        <script src="main.js"></script>
+    </head>
+    <body>
+      <header>
+        <section class="banner">
+          <div class="banner__title">
+            Off the Table
+          </div>
+          <div class="banner__subtitle">
+            It's What's <span class="underline">Not</span> for Dinner
+          </div>
+        </section>
+      <nav>
+        <div class="nav__button heavy-font">
+          <a href="./index.html">Home</a>
+        </div>
+        <div class="nav__button heavy-font">
+          <a href="./report.html">Allergies and Aversions Report</a>
+        </div>
+        <div class="nav__button heavy-font">
+          <a href="./about.html">About</a>
+        </div>
+      </nav>
+      </header>
+      <main>
+        <section class="instructions main">
+          <div class="instructions__title">
+            <h2>Instructions:</h2>
+          </div>
+          <div class="instructions__text">
+            Enter the allergy and aversion information for each person, then click the "Add Person" button. When you have added all members of the group, click the "Generate Report" button to see the aggregate list of food allergies and aversions for all the guests who will be in attendance for the meal.
+          </div>
+          <div class="form-box">
+            <div class="form-inputs-box">
+              <input type="text" name="name-input" class="inputs" placeholder="Name">
+              <input type="text" name="allergies-input" class="inputs" placeholder="allergies">
+              <input type="text" name="aversions-input" class="inputs" placeholder="aversions">
+            </div>
+            <div class="added-persons">
+            <button name="add-person-button" class="add-person">Add Person</button>
+            </div>
+          </div>
+          <div class="report-button">
+            <button name="generate-report-button" class="generate-report">Generate Report</button>
+          </div>
+          <div class="the-report-box">
+            <div class="report-statement">
+              Here is your report:
+            </div>
+            <table class="report-table">
+              <tr class="table-titles">
+                <td class="heavy-font">Combined Group Allergies</td>
+                <td class="heavy-font">Combined Group Aversions</td>
+              </tr>
+              <tr>
+                <td>peanuts</td>
+                <td>mayo</td>
+              </tr>
+              <tr>
+                <td>shrimp</td>
+                <td>milk</td>
+              </tr>
+              <tr>
+                <td>mangoes</td>
+                <td>cherries</td>
+              </tr>
+              <tr>
+                <td>pork</td>
+                <td>lemons</td>
+              </tr>
+              <tr>
+                <td>mustard</td>
+                <td>walnuts</td>
+              </tr>
+              <tr>
+                <td>apples</td>
+                <td>cinnamon</td>
+              </tr>
+            </table>
+            <div class="create-new">
+              <button name="create-new-report" class="create-new-report">Create New Report</button>
+            </div>
+          </div>
+      </main>
+    </body>
+</html>
