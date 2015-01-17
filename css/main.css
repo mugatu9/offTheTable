@@ -1,8 +1,35 @@
+a {
+	text-decoration: none;
+	color:white;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
 body {
 	margin-left:auto;
 	margin-right:auto;
 	font-family:"Raleway";
-	background-color:silver;
+	/*background-color:silver;*/
+	/* IE10 Consumer Preview */ 
+/* IE10 Consumer Preview */ 
+background-image: -ms-radial-gradient(center, circle farthest-corner, #C0C0C0 0%, #666666 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-radial-gradient(center, circle farthest-corner, #C0C0C0 0%, #666666 100%);
+
+/* Opera */ 
+background-image: -o-radial-gradient(center, circle farthest-corner, #C0C0C0 0%, #666666 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #C0C0C0), color-stop(1, #666666));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-radial-gradient(center, circle farthest-corner, #C0C0C0 0%, #666666 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: radial-gradient(circle farthest-corner at center, #C0C0C0 0%, #666666 100%);
 }
 
 .heavy-font {
@@ -72,8 +99,8 @@ h2 {
 	padding-bottom:8px;
 }
 
-.main__description {
-	width:70%;
+.main {
+	width:60%;
 	margin-top:50px;
 	margin-left:auto;
 	margin-right:auto;
@@ -82,8 +109,34 @@ h2 {
 	padding:30px 30px 30px 20px;
 }
 
-.main__description p {
-	padding-top:10px;
+.main p {
+	padding-top:20px;
 	padding-bottom:40px;
 	line-height:120%;
 }
+
+.instructions__text {
+	font-size:1.4rem;
+}
+
+.report-button {
+	text-align:center;
+}
+
+.report-table {
+	outline:1px solid black;
+	font-size:1.4rem;
+	background-color:white;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+}
+
+.report-table tr td {
+	outline:1px solid black;
+	padding:8px;
+}
+
+.create-new {
+	text-align:center;
+
