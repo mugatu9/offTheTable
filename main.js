@@ -43,17 +43,17 @@ for(i=0; i<peopleGroup.persons.length; i++){
 
 function generateDisplay (name, allergies, aversions) {
   if(!document.getElementsByClassName("table")) {
-    var output = document.getElementsByClassName("form-box")[0],
-        tbl = document.createElement("table"),
+    var output =  document.getElementsByClassName("form-box")[0],
+        tbl =     document.createElement("table"),
         tblBody = document.createElement("tbody");
     tblBody.setAttribute("class", "table");
     table.appendChild(tblBody);
     output.appendChild(tbl);
   }
 
-  var tblBody = document.getElementsByClassName("table"),
-      row = document.createElement("tr"),
-      tdName = document.createElement("td"),
+  var tblBody =     document.getElementsByClassName("table"),
+      row =         document.createElement("tr"),
+      tdName =      document.createElement("td"),
       tdAllergies = document.createElement("td"),
       tdAversions = document.createElement("td");
   tdName.appendChild(document.createTextNode(name));
