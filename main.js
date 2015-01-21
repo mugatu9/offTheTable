@@ -43,47 +43,32 @@ for(i=0; i<peopleGroup.persons.length; i++){
 
 
 function generateDisplay (name, allergies, aversions) {
-  if(!(document.getElementById("table"))) {
-    var output   = document.getElementById("report-statement"),
-        tbl      = document.createElement("table"),
-        tblBody  = document.createElement("tbody");
-        headRow  = document.createElement("tr"),
-        tblHead1 = document.createElement("th"),
-        head1txt = document.createTextNode("Name"),
-        tblHead2 = document.createElement("th"),
-        head2txt = document.createTextNode("Allergies"),
-        tblHead3 = document.createElement("th"),
-        head3txt = document.createTextNode("Aversions");
-    tblHead1.appendChild(head1txt);
-    tblHead2.appendChild(head2txt);
-    tblHead3.appendChild(head3txt);
-    headRow.appendChild(tblHead1);
-    headRow.appendChild(tblHead2);
-    headRow.appendChild(tblHead3);
-    tblBody.appendChild(headRow);
-    tblBody.setAttribute("id", "table");
-    tbl.appendChild(tblBody);
-    output.appendChild(tbl);
 
+  if(peopleGroup.persons.length == false) {
+    $("#report-statement").append(
+     '<table>                   \
+        <tbody id="table">      \
+         <tr>                   \
+          <th>Name</th>         \
+          <th>Allergies</th>    \
+          <th>Aversions</th>    \
+        </tbody>                \
+      </table>');
   }
-  var tblBody     = document.getElementById("table"),
-      row         = document.createElement("tr"),
-      tdName      = document.createElement("td"),
-      tdAllergies = document.createElement("td"),
-      tdAversions = document.createElement("td");
-  tdName.appendChild(document.createTextNode(name));
-  tdAllergies.appendChild(document.createTextNode(allergies));
-  tdAversions.appendChild(document.createTextNode(aversions));
-  row.appendChild(tdName);
-  row.appendChild(tdAllergies);
-  row.appendChild(tdAversions);
-  tblBody.appendChild(row);
+  $("#table").append(
+    "<tr><td>" + name + "</td><td>" + allergies + "</td><td>" + aversions + "</td></tr>"
+    );
 }
 
-var addPerson = document.getElementById("add-person");
-addPerson.onclick = PeopleGroup.prototype.addPerson;
-// addPerson.addEventListenter('click', function() {PeopleGroup.prototype.addPerson()}, false);
-console.log("The group's allergies are " + masterAllergiesList);
-console.log("The group's aversions are " + masterAversionsList);
+function generateReport () {
+
+
+  $(".main").before(
+
+
+    );
+
+}
+$("#add-person").on("click", function() {peopleGroup.addPerson()});
 
 

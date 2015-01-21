@@ -91,6 +91,15 @@ nav {
 	font-size:1.6rem;
 	padding:20px;
 }
+ul {
+-webkit-column-count: 3;
+-webkit-column-gap: 1px;
+-moz-column-count: 3;
+-moz-column-gap: 1px;
+column-count: 3;
+column-gap: 1px;
+
+}
 
 main p {
 	text-align:left;
