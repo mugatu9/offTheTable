@@ -36,10 +36,7 @@ PeopleGroup.prototype.addPerson = function() {
 var peopleGroup = new PeopleGroup();
 
 
-for(i=0; i<peopleGroup.persons.length; i++){
-  masterAllergiesList.push(peopleGroup.persons[i].allergies);
-  masterAversionsList.push(peopleGroup.persons[i].aversions);
-}
+
 
 
 function generateDisplay (name, allergies, aversions) {
@@ -62,13 +59,34 @@ function generateDisplay (name, allergies, aversions) {
 
 function generateReport () {
 
+  for(i=0; i<peopleGroup.persons.length; i++){
+      masterAllergiesList.push(peopleGroup.persons[i].allergies);
+      masterAversionsList.push(peopleGroup.persons[i].aversions);
+  }
+  var aversion,
+      allergy;
+  var reportList =
+  $(
+    "<ul class='report'>                                    \
+      <li class='gAllergies'><h2>Group Allergies</h2></li>  \
+     </ul>"
+  );
+  $(".main").before(reportList);
+  $(".main").addClass('hide');
+  console.log(masterAllergiesList + "  fdsfs  " + masterAversionsList);
 
-  $(".main").before(
+  for (i=0; i<masterAllergiesList.length; i++) {
+    $(".gAllergies").closest(".report").append("<li>" + masterAllergiesList[i] + "</li>");
+  }
+  $(".report").append("<li class='gAversions'><h2>Group Aversions</h2></li>");
+
+  for (i=0; i<masterAversionsList.length; i++) {
+    $(".gAversions").closest(".report").append("<li>" + masterAversionsList[i] + "</li>");
+  }
 
 
-    );
 
 }
 $("#add-person").on("click", function() {peopleGroup.addPerson()});
-
+$(".generate-report").on('click', generateReport);
 

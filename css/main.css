@@ -92,13 +92,18 @@ nav {
 	padding:20px;
 }
 ul {
--webkit-column-count: 3;
+-webkit-column-count: 2;
 -webkit-column-gap: 1px;
--moz-column-count: 3;
+-moz-column-count: 2;
 -moz-column-gap: 1px;
-column-count: 3;
+column-count: 2;
 column-gap: 1px;
-
+border: 1px solid black;
+width: 900px;
+margin:0 auto 0 auto;
+}
+li {
+	text-align: center;
 }
 
 main p {
@@ -109,6 +114,13 @@ h2 {
 	font-weight:bold;
 	padding-top:8px;
 	padding-bottom:8px;
+}
+.hide {
+	display: none;
+}
+
+.show {
+	display: default;
 }
 
 .main {
